@@ -1,0 +1,43 @@
+/*
+ * Blink
+ * Turns on an LED on for one second,
+ * then off for one second, repeatedly.
+ */
+
+#include <Arduino.h>
+
+// Set GPIO_PIN if it is not defined by Arduino framework
+#define PIN_BLU 2  // D4
+#define PIN_RED 0 // D3
+#define PIN_GRN 14 // D5
+#define PIN_INP 5 // D1
+
+// outputs D3, D4, D5
+// inputs D1 (5)
+
+
+void setup()
+{
+  pinMode(PIN_BLU, OUTPUT);
+  pinMode(PIN_RED, OUTPUT);
+  pinMode(PIN_GRN, OUTPUT);
+  pinMode(PIN_INP, INPUT);
+}
+
+void loop()
+{
+  // turn the LED on (HIGH is the voltage level)
+  digitalWrite(PIN_RED, LOW);
+  digitalWrite(PIN_BLU, HIGH);
+  // wait for a second
+  delay(1000);
+  digitalWrite(PIN_BLU, LOW);
+  digitalWrite(PIN_GRN, HIGH);
+  // turn the LED off by making the voltage LOW
+  delay(1000);
+  digitalWrite(PIN_GRN, LOW);
+  digitalWrite(PIN_RED, HIGH);
+   // wait for a second
+  delay(1000);
+}
+
